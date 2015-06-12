@@ -12,7 +12,7 @@ class Group < ActiveRecord::Base
     if phone_numbers.is_a? Array
       phone_numbers = phone_numbers
     else
-      phone_numbers = phone_numbers.split(/[ ,;\r\n]/)
+      phone_numbers = phone_numbers.split(/[,;\r\n]/)
     end
     phones_to_group = []
     phone_numbers.each do |phone_number|

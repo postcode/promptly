@@ -37,3 +37,12 @@
 		}
 	}
 }
+
+.button {
+	&.edit {
+		color: #000;
+		&:visited {
+			color: #000;
+		}
+	}
+}
