@@ -12,8 +12,8 @@ FactoryGirl.define do
   factory :conversation do
     date DateTime.now
     message "test message"
-    to_number { Faker::PhoneNumber.phone_number }
-    from_number { Faker::PhoneNumber.phone_number }
+    to_number { Faker::PhoneNumber.cell_phone }
+    from_number { Faker::PhoneNumber.cell_phone }
   end
 
   factory :recipient do
