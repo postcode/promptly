@@ -31,6 +31,7 @@ class Admin::DashboardController < OrgController
     notifications_scope = notifications_scope.undelivered if params[:undelivered_check] == "1"
     notifications_scope = notifications_scope.unsubscribed if params[:stop_check] == "1"
     notifications_scope = notifications_scope.all_sent if params[:messages_check] == "1"
+    notifications_scope = notifications_scope.text_responses if params[:received_check] == "1"
     if params[:start_date] || params[:end_date]
       notifications_scope = notifications_scope.date_filter(start_date: params[:start_date], end_date: params[:end_date]) if !params[:start_date].empty? || !params[:end_date].empty?
     end
@@ -57,6 +58,7 @@ class Admin::DashboardController < OrgController
       notifications_scope = notifications_scope.undelivered if @options_hash["undelivered_check"] == "1"
       notifications_scope = notifications_scope.unsubscribed if @options_hash["stop_check"] == "1"
       notifications_scope = notifications_scope.all_sent if @options_hash["messages_check"] == "1"
+      notifications_scope = notifications_scope.text_responses if @options_hash["received_check"] == "1"
       if @options_hash["start_date"] || @options_hash["end_date"]
         notifications_scope = notifications_scope.date_filter(start_date: @options_hash["start_date"], end_date: @options_hash["end_date"]) if !@options_hash["start_date"].empty? || !@options_hash["end_date"].empty?
       end

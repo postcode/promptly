@@ -48,6 +48,11 @@
               <%= check_box_tag :undelivered_check %>
               <span class="undelivered"><%= "Undelivered Messages" %></span>
             </div>
+            <div>
+              <%= hidden_field_tag :received_check, "0", id: "rc" %>
+              <%= check_box_tag :received_check %>
+              <span class="received"><%= "Incoming Messages" %></span>
+            </div>
           </div>
         </div>
       </li>
