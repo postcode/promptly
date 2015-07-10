@@ -25,7 +25,7 @@ class Group < ActiveRecord::Base
         end
       end
     end
-    the_group.recipient_ids = phones_to_group
+    the_group.recipient_ids = phones_to_group.uniq
     the_group.save!
   end
 
